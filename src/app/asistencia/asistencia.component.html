@@ -1,0 +1,55 @@
+<body>
+
+  <div class="asistencia" *ngIf="!cliente">
+
+    <form #formulario="ngForm" (ngSubmit)="registrar(formulario)">
+
+      <mat-form-field class="id">
+        <mat-label>Id</mat-label>
+        <input type="number" name="id" matInput placeholder="" autocomplete="no" ngModel>
+      </mat-form-field><br>
+      <mat-form-field class="nip">
+        <mat-label>Nip</mat-label>
+        <input type="number" name="nip" matInput placeholder="****" autocomplete="no" ngModel>
+      </mat-form-field><br>
+
+      <button mat-raised-button type="submit" [disabled]="findText">Entrar</button>
+
+    </form>
+
+  </div>
+
+  <div class="text" *ngIf="findText">
+    <h2>Asistencia Exitosa!</h2>
+    <a [routerLink]="['']">Volver Al Login</a>
+  </div>
+
+  <div class="table" *ngIf = "cliente">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha De Ingreso </th>
+        <td mat-cell *matCellDef="let usuarios"> {{usuarios.fecha}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="hora">
+        <th mat-header-cell *matHeaderCellDef> Hora De Ingreso </th>
+        <td mat-cell *matCellDef="let usuarios"> {{usuarios.hora}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let usuarios"> {{usuarios.nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="servicio">
+        <th mat-header-cell *matHeaderCellDef> Servicio </th>
+        <td mat-cell *matCellDef="let usuarios"> {{usuarios.servicio}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+    </table>
+  </div><br><br>
+
+</body>

@@ -1,0 +1,40 @@
+body{
+    background-color:#ffc881;
+    border-radius: 10px;
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+.consulta{
+    padding-left: 20px;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+
+.tabla{
+    transition:all .5s ease-in-out;
+    padding: 10px;
+}
+.mat-elevation-z8{
+    transition:all .5s ease-in-out;
+}
+
+.calendario{
+    margin: 10px;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+    padding-top: 20px;
+    font-style: italic;
+  }
+.view{
+    padding: 20px;
+}
+.hint{
+    font-size: small;
+}

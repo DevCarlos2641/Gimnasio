@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<body *ngIf="show" @fadeInOut>
+    <div class="header">
+        <div class="logins">
+            <button (click)="log()" *ngIf="cliente"> Login</button>
+            <button (click)="logOut()" *ngIf="cliente">Logout</button>
+            <button (click)="routerCliente()" *ngIf="cliente">Asistencia</button>
+        </div>
+        <h1>Gimnasio De Amacueca</h1>
+        <img class="logo" src="./assets/images/logo.png" [routerLink]="['/Cliente/Asistencia']">
+    </div>
+
+    <div class="containerMenu">
+        <div class="home" [routerLink]="['/Main']" *ngIf="cliente">
+            <p>Administrador</p>
+            <img class="imgAdm" src="./assets/images/administrar.png">
+        </div>
+        <div class="home" [routerLink]="['/Cliente/Asistencia']" *ngIf="!cliente">
+          <p>Asistencia</p>
+          <img class="imgAdm" src="./assets/images/administrar.png">
+      </div>
+        <div class="home" (click)="routerHome()">
+            <img class="imgHome" src="./assets/images/home.png">
+            <p>Home</p>
+        </div>
+    </div>
+
+    <div class="router">
+        <router-outlet></router-outlet>
+    </div>
+</body>

@@ -1,0 +1,13 @@
+body{
+  margin: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  background: rgba(255, 255, 255, 0);
+}
+p{
+  font-size: x-large;
+  padding: 20px;
+}
+div{
+  width: 100%;
+  text-align: end;
+}

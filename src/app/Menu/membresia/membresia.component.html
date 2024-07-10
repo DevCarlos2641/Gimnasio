@@ -1,0 +1,30 @@
+<body>
+    <div *ngIf="show" @fadeInOut>
+        <div class="title">Actualizar Membresia De Usuario</div>
+        <div class="formContainer">
+            <div>
+                <img class="img" [src] = "pathImg">
+            </div>
+            <form class="form_group">
+                <label> ID Usuario </label>
+                    <input type="number" min="0" name="id" [(ngModel)]="inputId" (keyup)="buscarId()" autocomplete="off"><br>
+
+                <label> Nombre </label>
+                    <input type="text" disabled="true" value="{{usuarioMembresia.nombres}} {{usuarioMembresia.apellidos}}"><br>
+
+                <label>¿Es estudiante? </label><br>
+                    <input type="checkbox" [checked]="membresia.estudiante" (change)="changeEstudiante()" [disabled]="pago"><label>Sí </label><br>
+
+                <label>Monto A Pagar: {{membresia.monto}}</label> {{message}}<br><br>
+
+                <label>Pagó con $</label>
+                    <input type="number" min="0" (keyup)="darCambio($event)" [disabled]="pago" value="{{pagoB}}" autocomplete="off" ><br>
+
+                <label>Su cambio es $</label>
+                    <input type="number" disabled="true" value="{{cambio}}" autocomplete="off"><br>
+
+                <input type="submit" value="Renovar" (click)="renovar()">
+            </form>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,25 @@
+<body *ngIf="show" @fadeInOut>
+    <section class="container">
+        
+        <div class="left">
+        <div class="divimg">
+            <img class="img" src="./assets/images/aptitud.png">
+        </div>
+            <div class="vertical-menu">
+                <button (click)="cambiarMembresia()">Membresia</button>
+                <button (click)="cambiarView('Main/ListaMembresias')">Lista De Membresias</button>
+                <button (click)="cambiarView('Main/Usuario')">Agregar Usuario</button>
+                <button (click)="cambiarView('Main/Modificar')">Modificar Datos</button>
+                <button (click)="cambiarView('Main/Registros')">Lista De Registros</button>
+                <button (click)="cambiarView('Main/Visita')">Visita</button>
+                <button (click)="cambiarView('Main/Finanzas')">Finanzas</button>
+            </div>
+        </div>
+
+        <div class="right">
+            <router-outlet  #outlet="outlet"></router-outlet>
+        </div>
+
+    </section>
+
+</body>

@@ -1,0 +1,21 @@
+<body *ngIf="show" @fadeInOut>
+
+    <div class="menuImg">
+        <img src="./assets/images/calendario.png" (click)="openDialog('horario')">
+        <img src="./assets/images/mapa.png" (click)="openDialog('ubicacion')">
+        <img src="./assets/images/informacion.png" (click)="openDialog('')">
+    </div>
+    <div class="menu">
+        <button (click)="openDialog('horario')"> Horarios </button>
+        <button (click)="openDialog('ubicacion')">Ubicacion</button>
+        <button (click)="openDialog('')">Mas Informacion...</button>
+    </div>
+
+    <div class="container">
+        <div class="lightbox-gallery">
+            <div *ngFor="let data of dataImagen; let i = index">
+                <img class="img" [src]="data.imagenSrc" [alt]="data.imagenAlt" (click)="dialogImg(data.imagenSrc)">
+            </div>  
+        </div>
+    </div>
+</body>

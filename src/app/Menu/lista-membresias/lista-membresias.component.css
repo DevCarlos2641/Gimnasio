@@ -1,0 +1,44 @@
+body{
+    background-color:#ffc881;
+    border-radius: 10px;
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+.header{
+    display: flex;
+}
+.fecha{
+    margin: 10px;
+}
+.allFechas{
+    width: 100%;
+    margin-top: 20px;
+}
+.table{
+    margin: 10px;
+}
+.refresh{
+    text-align: right;
+    width: 100%;
+}
+.refresh > img{
+    transition:all .5s ease-in-out;
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+}
+.refresh > img:hover{
+    transition:all .5s ease-in-out;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+    padding-top: 20px;
+    font-style: italic;
+  }

@@ -1,0 +1,50 @@
+<body>
+    <div *ngIf="show" @fadeInOut>
+        <div class="title">Modificar Datos De Usuario</div>
+        <form class="buscar">
+            <mat-form-field class="buscador"> <mat-label>Seleccionar Usuario</mat-label>
+                <mat-select [(value)]="usuarioSelect" (selectionChange)="rellenar()">
+                    <mat-option *ngFor="let nombre of nombresUs; let i = index" value="{{nombre}}">
+                        {{nombre}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="buscador">
+                <mat-label>Buscar Usuario Por Nombres</mat-label>
+                <input type="text" matInput placeholder="Nombres" (keyup)="buscarNombre($event)" value="{{buscar}}">
+            </mat-form-field>
+            <mat-form-field class="buscador">
+                <mat-label>Buscar Usuario Por ID</mat-label>
+                <input type="number" matInput placeholder="Id" (keyup)="buscarId($event)" value="{{buscarN}}">
+            </mat-form-field>
+        </form>
+
+        <form class="modificar">
+            <h2>IdUsuario: {{usuarioToModific.idUsuario}}</h2>
+            <div>
+                <mat-form-field class="nombres">
+                    <mat-label>Nombres</mat-label>
+                    <input type="text" matInput value="{{usuarioToModific.nombres}}" #nombresM (keyup)="changeM($event)" autocomplete="no">
+                </mat-form-field>
+                <mat-form-field class="nombres">
+                    <mat-label>Apellidos</mat-label>
+                        <input type="text" matInput value="{{usuarioToModific.apellidos}}" #apellidosM (keyup)="changeM($event)" autocomplete="no">
+                </mat-form-field>
+            </div>
+            <mat-form-field>
+                <mat-label>Telefono</mat-label>
+                    <input type="number" matInput value="{{usuarioToModific.telefono}}" #telefonoM (keyup)="changeM($event)" autocomplete="no">
+            </mat-form-field><br>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                    <input type="email" matInput value="{{usuarioToModific.email}}" #emailM (keyup)="changeM($event)" autocomplete="no">
+            </mat-form-field><br>
+            <mat-form-field>
+                <mat-label>Discapacidad y/o Discapacidad</mat-label>
+                    <input type="text" matInput value="{{usuarioToModific.enfermedad}}" #enfermedadM (keyup)="changeM($event)" autocomplete="no">
+            </mat-form-field><br>
+            <button mat-raised-button type="submit" (click)="modificarUsuario(nombresM.value, apellidosM.value, telefonoM.value, emailM.value, enfermedadM.value)">Modificar</button>
+        </form>
+    </div>
+</body>

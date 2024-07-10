@@ -1,0 +1,13 @@
+<body>
+    <div *ngIf="show" @fadeInOut>
+    <div class="title">Visita Rapida</div>
+    <form>
+        <label>¿Es estudiante? </label><br>
+        <input type="checkbox" [checked]="estudiante" (change)="changeEstudiante()"><label>Sí </label><br><br>
+        <label>Monto A Pagar: ${{monto}}</label><br><br>
+        <label>Pagó con $</label><input type="number" min="0" (keyup)="darCambio($event)" value="{{pago}}"><br><br>
+        <label>Su cambio es $</label><input type="number" disabled="true" value="{{vuelto}}"><br><br>
+        <input type="submit" value="Entrar" (click)="entrar()"><br>
+    </form>
+    </div>
+</body>

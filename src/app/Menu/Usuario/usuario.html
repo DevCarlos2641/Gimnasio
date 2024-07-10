@@ -1,0 +1,67 @@
+<body>
+    <div *ngIf="show" @fadeInOut>
+
+        <div class="title">Nuevo Usuario</div>
+
+        <form class="example-form" >
+            <div class="image-dates">
+                <img class="img" [src] = pathImg>
+                <div class="nombreCompleto">
+
+                    <mat-form-field class="nc">
+                        <mat-label>Nombres</mat-label>
+                        <input matInput placeholder="Juan Pedro" autocomplete="no" #name>
+                    </mat-form-field>
+
+                    <mat-form-field class="nc">
+                        <mat-label>Telefono</mat-label>
+                        <input type="number" matInput placeholder="342" autocomplete="no" #telf>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="TelEdad">
+
+                    <mat-form-field class="nc">
+                        <mat-label >Apellidos</mat-label>
+                        <input matInput placeholder="Perez" autocomplete="no" #apellido>
+                    </mat-form-field>
+
+                    <mat-form-field class="nc">
+                        <mat-label>Edad</mat-label>
+                        <input type="number" matInput placeholder="18" autocomplete="no" #edad>
+                    </mat-form-field>
+
+                </div>
+            </div>
+
+            <div class="sexo">
+              <p>Id Usuario: {{this.cont}}</p>
+              <mat-radio-group aria-label="Select an option">
+                  <mat-radio-button (click) = "sexo('hombre')">Hombre</mat-radio-button>
+                  <mat-radio-button (click) = "sexo('mujer')">Mujer</mat-radio-button>
+              </mat-radio-group>
+              <mat-checkbox [checked]="membresia.estudiante" (change)="changeEstudiante()">Estudiante</mat-checkbox>
+            </div>
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="example@correo.com" autocomplete="no" #email>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Discapacidad</mat-label>
+                <input type="text" matInput placeholder="Discapacidad y/o Enfermedad" autocomplete="no" #enfermedad>
+            </mat-form-field>
+
+            <mat-form-field class="nip">
+              <mat-label>Nip</mat-label>
+              <input type="number" matInput placeholder="****" autocomplete="no" #nip>
+            </mat-form-field>
+
+            <div class="boton">
+                <button mat-raised-button type="submit" (click)="agregarUser(name.value, apellido.value, telf.value, edad.value, email.value, enfermedad.value, nip.value)">Agregar</button>
+            </div>
+        </form>
+    </div>
+</body>

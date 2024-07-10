@@ -1,0 +1,31 @@
+<html>
+<body *ngIf="show" @fadeInOut>
+	<div class="main">
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form #formularioSingUp="ngForm" (ngSubmit)="singUp(formularioSingUp)">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="user" placeholder="User Name" required="" autocomplete="off" ngModel>
+					<input type="password" name="password" placeholder="Password" required="" autocomplete="off" ngModel>
+					<button type="submit" [disabled]="buttonSingUp">Sign up</button>
+				</form>
+        <div class="progress" *ngIf="buttonSingUp">
+          Loading...
+       </div>
+			</div>
+
+			<div class="login">
+				<form #formuarioLogin="ngForm" (ngSubmit)="login(formuarioLogin)">
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="text" name="userL" placeholder="User Name" required="" autocomplete="off" ngModel>
+					<input type="password" name="passwordL" placeholder="Password" required="" autocomplete="off" ngModel>
+					<button type="submit" [disabled]="buttonLogin">Login</button>
+				</form>
+        <div class="progress" *ngIf="buttonLogin">
+          Loading...
+       </div>
+			</div>
+	</div>
+</body>
+</html>

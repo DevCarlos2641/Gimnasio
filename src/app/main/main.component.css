@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    width: 100%;
+}
+.left{
+  padding-top: 10px;
+  width: 25%;
+}
+
+.right{
+  right:  0px;
+  width: 75%;
+} 
+
+  .vertical-menu {
+    width: auto; /* Set a width if you like */
+  }
+  
+  .vertical-menu button {
+    background-color: #c4c4c4; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    transition:all .5s ease-in-out;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+  }
+  
+  .vertical-menu button:hover {
+    background-color: #cccccc00; /* Dark grey background on mouse-over */
+    transition:all .5s ease-in-out;
+  }
+
+button{
+  text-align: center;
+  margin: 2px;
+  border-radius: 10px;
+  border-color: aliceblue;
+}
+
+.divimg{
+  width: 100%;
+  text-align: center;
+}
+.img{
+  width: 20%;
+  height: 100%;
+}

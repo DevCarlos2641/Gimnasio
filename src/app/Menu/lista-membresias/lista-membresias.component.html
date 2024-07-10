@@ -1,0 +1,65 @@
+<body>
+    <div *ngIf="show" @fadeInOut>
+      <div class="title">Lista De Membresias De Usuario</div>
+      <div class="header">
+
+        <div class="fecha">
+          <mat-form-field class="calendario">
+            <mat-label>Fecha De Registros</mat-label>
+            <input matInput [matDatepicker]="picker1" (dateChange)="setFecha($event)" [value] = "fecha" [disabled]="allFechas">
+            <mat-hint class="hint">MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="allFechas">
+          <mat-checkbox [checked]="allFechas" (change)="changeFecha()">Todas las fechas</mat-checkbox>
+        </div>
+
+      </div>
+
+        <div class="table">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <ng-container matColumnDef="idUsuario">
+                <th mat-header-cell *matHeaderCellDef> IdUsuario </th>
+                <td mat-cell *matCellDef="let registros"> {{registros.idUsuario}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let registros"> {{registros.nombre}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="fechaPago">
+                <th mat-header-cell *matHeaderCellDef> Fecha Pago </th>
+                <td mat-cell *matCellDef="let registros"> {{registros.fechaPago}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="monto">
+                <th mat-header-cell *matHeaderCellDef> Monto </th>
+                <td mat-cell *matCellDef="let registros"> ${{registros.monto}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="pago">
+                <th mat-header-cell *matHeaderCellDef> Pagó </th>
+                <td mat-cell *matCellDef="let registros"> ${{registros.pago}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="cambio">
+                <th mat-header-cell *matHeaderCellDef> Cambio </th>
+                <td mat-cell *matCellDef="let registros"> ${{registros.cambio}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="pdf">
+                <th mat-header-cell *matHeaderCellDef> PDF </th>
+                <td mat-cell *matCellDef="let registros" (click)="downloadPdf(registros.idUsuario)"> {{registros.pdf}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+              <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+            </table>
+          </div>
+    </div>
+</body>

@@ -1,0 +1,19 @@
+body{
+  margin: 10px;
+}
+
+.asistencia{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.text{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.table{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: 100%;
+}
