@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { animationLogin } from './Animations/animation';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -9,5 +10,11 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Gimnasio';
+
+  constructor(private cookies:CookieService){}
+
+  ngOnInit(){
+    // this.cookies.set("token", "");
+  }
+
 }

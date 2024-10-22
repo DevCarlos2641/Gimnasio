@@ -1,0 +1,29 @@
+.carousel{
+  padding: 20px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.cards{
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardHorario{
+  text-align: center;
+  color: black;
+  background-color: white;
+  margin: 20px;
+  width: 250px;
+  box-shadow: 5px;
+  box-shadow: 10px 5px  5px rgb(169, 169, 169);
+  border-radius: 10px;
+}

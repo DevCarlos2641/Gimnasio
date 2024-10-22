@@ -1,0 +1,47 @@
+.toolbar{
+  background-color: #DF6220;
+  height: 10vh;
+  .title{
+    color: white;
+    padding-left: 30px;
+    width: 100%;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .estado{
+    color: white;
+  }
+}
+
+.sideNav{
+  text-align: center;
+  background-color: white;
+  box-shadow: 5px;
+  box-shadow: 10px 5px  5px rgb(169, 169, 169);
+  img{
+    padding: 10px;
+  }
+  .menu{
+    padding: 20px;
+    button{
+      color: #DF6220;
+      margin: 10px;
+    }
+  }
+}
+
+.content{
+  width: 100%;
+  height: 90vh;
+}
+
+footer{
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: small;
+  text-align: center;
+  color: white;
+  bottom: 0;
+  background-color: #DF6220;
+}

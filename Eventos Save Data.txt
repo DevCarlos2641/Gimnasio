@@ -1,0 +1,17 @@
+Alta Usuario	
+	usuario		->	alta db
+	usuario		->	push data local
+	membreia	->	alta db
+	membrias	->	push data local
+
+Modificar Usuario
+	usuario		->	update db
+	usuario		->	update data local
+
+Actualizar membresia
+	membresia	->	update db
+	membresia	->	update data local
+	transaccion	->	alta db
+	transaccion	->	update data local
+	registroPdf	->	alta db
+	registroPdf	->	updata data	 local

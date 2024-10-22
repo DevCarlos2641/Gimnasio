@@ -1,0 +1,122 @@
+<div @fadeInOut class="body">
+  <mat-tab-group>
+    <mat-tab label="Nuevo Usuario">
+      <!-- Content of new user -->
+
+      <section>
+        <div class="div1">
+          <mat-form-field>
+            <mat-label>Nombres</mat-label>
+            <input matInput placeholder="Juan Pedro"
+              autocomplete="no" [(ngModel)]="usuario.nombres" name="nombres">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label >Apellidos</mat-label>
+            <input matInput placeholder="Perez"
+              autocomplete="no" name="apellidos" [(ngModel)]="usuario.apellidos">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Telefono</mat-label>
+            <input type="number" matInput placeholder="342"
+              autocomplete="no" name="tel" [(ngModel)]="usuario.telefono">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Edad</mat-label>
+            <input type="number" matInput placeholder="18"
+              autocomplete="no" name="edad" [(ngModel)]="usuario.edad">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="example@correo.com"
+              autocomplete="no" name="email" [(ngModel)]="usuario.email">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Discapacidad</mat-label>
+            <input type="text" matInput placeholder="Discapacidad y/o Enfermedad"
+              autocomplete="no" name="enfermedad" [(ngModel)]="usuario.enfermedad">
+          </mat-form-field>
+          <br>
+          <mat-form-field class="nip">
+            <mat-label>Nip</mat-label>
+            <input type="number" matInput placeholder="****"
+              autocomplete="no" name="nip" [(ngModel)]="usuario.nip">
+          </mat-form-field>
+        </div>
+
+        <div class="div2">
+          <img class="img" width="150px" [src] = pathImg >
+          <div>
+            <span>Id Usuario: {{this.cont}}</span> <br>
+            <mat-radio-group [(ngModel)] = "usuario.sexo" name="genero" (ngModelChange)="change()">
+                <mat-radio-button value="Hombre">Hombre</mat-radio-button>
+                <mat-radio-button value="Mujer">Mujer</mat-radio-button>
+            </mat-radio-group>
+            <mat-checkbox [checked]="membresia.estudiante" (change)="changeEstudiante()">Estudiante</mat-checkbox>
+          </div>
+          <div class="boton">
+            <button mat-raised-button type="submit" (click)="agregarUser()">Agregar</button>
+        </div>
+        </div>
+      </section>
+
+    </mat-tab>
+    <mat-tab label="Modificar Usuario">
+    <!-- Content of user modific -->
+
+      <section>
+        <form class="mat-elevation-z4">
+          <span>Buscar usuario</span><br><br>
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre completo</mat-label>
+            <input type="text" matInput placeholder="Nombres" (keyup)="buscarNombre()" [(ngModel)]="input" name="input">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>ID</mat-label>
+            <input type="number" matInput placeholder="Id" (keyup)="buscarId()" [(ngModel)]="inputId" name="inputId">
+          </mat-form-field>
+        </form>
+
+        <div class="modificar">
+          <span>IdUsuario: {{usuarioM.idUsuario}}</span><br>
+          <mat-form-field>
+            <mat-label>Nombres</mat-label>
+            <input type="text" matInput autocomplete="no"
+              [(ngModel)]="usuarioM.nombres" name="nombres">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Apellidos</mat-label>
+              <input type="text" matInput autocomplete="no"
+              [(ngModel)]="usuarioM.apellidos" name="apellidos">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Telefono</mat-label>
+              <input type="number" matInput autocomplete="no"
+              [(ngModel)]="usuarioM.telefono" name="telefono">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+              <input type="email" matInput autocomplete="no"
+                [(ngModel)]="usuarioM.email" name="email">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Discapacidad y/o Discapacidad</mat-label>
+              <input type="text" matInput autocomplete="no"
+                [(ngModel)]="usuarioM.enfermedad" name="discapacidad">
+          </mat-form-field><br>
+          <mat-form-field>
+            <mat-label>Nip</mat-label>
+              <input type="number" matInput autocomplete="no"
+                [(ngModel)]="usuarioM.nip" name="nip">
+          </mat-form-field><br>
+            <button mat-raised-button type="submit" (click)="modificUser()">Modificar</button>
+        </div>
+      </section>
+    </mat-tab>
+  </mat-tab-group>
+</div>

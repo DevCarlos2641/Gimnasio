@@ -1,0 +1,34 @@
+.body{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  height: 100%;
+}
+
+.filtro{
+  padding: 20px 0 0 20px;
+}
+
+.table{
+  padding: 20px;
+  height: 80vh;
+  overflow: auto;
+}
+
+.row:hover{
+  cursor: pointer;
+  background-color: #e07338;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+
+/* Css for dialogUser */
+
+.dialogBody{
+  padding: 20px;
+  font-size: large;
+  background-color: #DF6220;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}

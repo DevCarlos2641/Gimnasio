@@ -1,0 +1,39 @@
+<mat-toolbar class="toolbar">
+  <button mat-mini-fab class="example-icon" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="title">Gimnasio Municipal</span>
+  <span class="example-spacer"></span>
+  <span class="estado">Amacueca, Jalisco</span>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+
+  <!-- SideNav content -->
+  <mat-drawer class="sideNav" mode="side" #drawer opened>
+    <div class="contentImg">
+      <img src="./../../assets/images/logo.png" width="150px" routerLink="/Gimnasio/Home"/>
+    </div>
+    <div class="menu">
+      <button mat-raised-button routerLink="/Gimnasio/Usuario">Usuarios <mat-icon>person</mat-icon> </button> <br>
+      <button mat-raised-button routerLink="/Gimnasio/Membresia/-1">Membresias <mat-icon>card_membership</mat-icon> </button> <br>
+      <button mat-raised-button routerLink="/Gimnasio/Registros">Lista de registros <mat-icon>group</mat-icon> </button> <br>
+      <button mat-raised-button routerLink="/Gimnasio/Finanzas">Finanzas <mat-icon> bar_chart</mat-icon> </button> <br>
+    </div>
+    <button mat-flat-button class="logout" (click)="logOut()" routerLink="/">
+      LogOut <span class="material-icons"> logout </span> </button>
+  </mat-drawer>
+
+  <!-- All content -->
+  <div class="content">
+    <router-outlet></router-outlet><br>
+    <footer>
+      <span>©  Copyright</span><br>
+      <span>Amacueca, Jalisco</span><br>
+      <span>Calle Pedro Moreno #61</span><br>
+      <span>Cp: 49370</span><br>
+      <hr>
+      <span>Developing with Angular</span>
+    </footer>
+  </div>
+</mat-drawer-container>

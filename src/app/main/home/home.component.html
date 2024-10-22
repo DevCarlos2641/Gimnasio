@@ -1,0 +1,30 @@
+<div @fadeInOut>
+  <div class="carousel">
+    <owl-carousel-o [options]="customOptions">
+      @for (img of images; track $index) {
+        <ng-template carouselSlide>
+          <img [src]="img.src" alt="{{img.title}}" height="250px" (dblclick)="showImage(img.src)"/>
+          <div class="caption">
+            <h3>{{img.title}}</h3>
+            <p>{{img.description}}</p>
+          </div>
+        </ng-template>
+      }
+    </owl-carousel-o>
+  </div>
+  <br>
+  <div class="cards">
+    <mat-card appearance="outlined" class="cardHorario ">
+      <mat-card-header>
+        <mat-card-title>Horario</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <span>Lunes a viernes</span><br>
+        <span>6:00 Am - 11:00 Am</span><br>
+        <span>3:00 Am - 9:00 Am</span><br>
+        <span>Sabado</span><br>
+        <span>7:00 Am - 12:00 Am</span><br>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
